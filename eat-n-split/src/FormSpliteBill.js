@@ -30,9 +30,7 @@ export default function FormSpliteBill({ curFriend, onUpdateBill }) {
         type="number"
         value={bill}
         onChange={(e) => {
-          const newBill = Number(e.target.value);
-          setBill(newBill);
-          setTheyMoney(newBill - yourMoney);
+          setBill(e.target.value);
         }}
       ></input>
 
@@ -41,19 +39,12 @@ export default function FormSpliteBill({ curFriend, onUpdateBill }) {
         type="number"
         value={yourMoney}
         onChange={(e) => {
-          const newYourMoney = Number(e.target.value);
-          setYourMoney(newYourMoney);
-          setTheyMoney(bill - newYourMoney);
+          setYourMoney(e.target.value);
         }}
       ></input>
 
       <label>{curFriend.name}'s expense</label>
-      <input
-        type="number"
-        value={theyMoney}
-        onChange={(e) => setTheyMoney(e.target.value)}
-        disabled
-      ></input>
+      <input type="number" value={bill - yourMoney} disabled></input>
 
       <label>Who is paying the bill</label>
       <select value={name} onChange={(e) => setName(e.target.value)}>

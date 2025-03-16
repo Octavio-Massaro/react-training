@@ -5,7 +5,7 @@ export default function ServiceSelection({
 }) {
   return (
     <div>
-      <span>{children} </span>
+      <span>{children}</span>
       <select
         value={serviceTip}
         onChange={(e) => handleServiceTip(Number(e.target.value))}
