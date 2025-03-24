@@ -67,3 +67,9 @@ input:focus {
   padding: 1rem 3rem;
   border-radius: 5px;
 }
+
+.box::-webkit-scrollbar,
+.list::-webkit-scrollbar {
+  display: none;
+  scroll-behavior: smooth;
+}
